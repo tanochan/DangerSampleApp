@@ -1,8 +1,6 @@
 name: danger-swift
 
 on:
-  # push:
-  #   branches: [ main ]
   pull_request:
     branches: [ main ]
 
