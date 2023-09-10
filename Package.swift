@@ -16,6 +16,9 @@ let package = Package(
             dependencies: [
                 .product(name: "Danger", package: "danger-swift"),
                 .product(name: "swiftlint", package: "SwiftLint")
-            ]),
+            ],
+            path: "./",
+            sources: ["./Sources/DangerApp/Fake.swift"]
+            ),
     ]
 )
