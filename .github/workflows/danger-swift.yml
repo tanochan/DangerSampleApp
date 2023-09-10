@@ -1,0 +1,27 @@
+name: danger-swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+      name: Run Danger and Swiftlint
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out code
+          uses: actions/checkout@v2
+        - name: Use Swift 5.3
+          uses: actions/setup-swift@v2
+          with:
+            swift-version: '5.3'
+        - name: Install dependencies and build project
+          run: |
+            swift build
+        - name: Run Danger
+          run: |
+            swift run danger-swift ci
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
