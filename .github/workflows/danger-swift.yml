@@ -16,3 +16,6 @@ jobs:
             args: ci
         env:
           GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+      - run: swift run danger-swift ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
