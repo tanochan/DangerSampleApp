@@ -11,9 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: danger/swift@3.15.0
+        uses: danger/swift@3.17.1
         with:
-            args: ci
+            args: --failOnErrors --no-publish-check
         env:
           GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       # - run: swift run danger-swift ci
